@@ -2,3 +2,7 @@
 	path = projects/lhyfe-portail
 	url = https://github.com/valeuriad-techlab/lhyfe-portail-lite.git
 	branch = master
+[submodule "projects/lhyfe-nav"]
+	path = projects/lhyfe-nav
+	url = https://github.com/valeuriad-techlab/lhyfe-nav.git
+	branch = master
