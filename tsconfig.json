@@ -8,6 +8,12 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
+    "paths": {     
+      "lhyfe-nav": [
+        "dist/lhyfe-nav/lhyfe-nav",
+        "dist/lhyfe-nav"
+      ]
+    },
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -21,7 +27,7 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
