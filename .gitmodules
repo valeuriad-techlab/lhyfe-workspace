@@ -1,0 +1,6 @@
+[submodule "projects/lhyfe-nav"]
+	path = projects/lhyfe-nav
+	url = https://github.com/valeuriad-techlab/lhyfe-nav.git
+[submodule "projects/lhyfe-portail"]
+	path = projects/lhyfe-portail
+	url = https://github.com/valeuriad-techlab/lhyfe-portail-lite.git
