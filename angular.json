@@ -255,6 +255,13 @@
       "root": "projects/lhyfe-planner",
       "sourceRoot": "projects/lhyfe-planner/src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "en": "projects/lhyfe-planner/src/locale/messages.en.xlf",
+          "fr": "projects/lhyfe-planner/src/locale/messages.fr.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -349,6 +356,16 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "en": {
+              "localize": [
+                "en"
+              ]
+            },
+            "fr": {
+              "localize": [
+                "fr"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -367,6 +384,12 @@
             },
             "development": {
               "browserTarget": "lhyfe-planner:build:development"
+            },
+            "fr": {
+              "browserTarget": "lhyfe-planner:build:fr"
+            },
+            "en": {
+              "browserTarget": "lhyfe-planner:build:en"
             }
           },
           "defaultConfiguration": "development"
