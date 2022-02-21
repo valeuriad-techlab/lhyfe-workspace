@@ -6,3 +6,11 @@
 	path = projects/lhyfe-nav
 	url = https://github.com/valeuriad-techlab/lhyfe-nav.git
 	branch = master
+[submodule "projects/lhyfe-planner"]
+	path = projects/lhyfe-planner
+	url = https://github.com/valeuriad-techlab/lhyfe-planner.git
+	branch = master
+[submodule "projects/lhyfe-components"]
+	path = projects/lhyfe-components
+	url = https://github.com/valeuriad-techlab/lhyfe-components.git
+	branch = master
