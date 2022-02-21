@@ -264,12 +264,17 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "projects/lhyfe-planner/src/favicon.ico",
-              "projects/lhyfe-planner/src/assets"
+              "projects/lhyfe-planner/src/assets",
+              "projects/lhyfe-planner/src/assets/img/cropped-favicon_lhyfe.png"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/lhyfe-planner/src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -293,6 +298,41 @@
               ],
               "outputHashing": "all"
             },
+            "staging": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "6mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/lhyfe-portail/src/environments/environment.ts",
+                  "with": "projects/lhyfe-portail/src/environments/environment.staging.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "staging.local": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/lhyfe-portail/src/environments/environment.ts",
+                  "with": "projects/lhyfe-portail/src/environments/environment.staging.ts"
+                }
+              ],
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -309,6 +349,12 @@
           "configurations": {
             "production": {
               "browserTarget": "lhyfe-planner:build:production"
+            },
+            "staging": {
+              "browserTarget": "lhyfe-portail:build:staging"
+            },
+            "staging.local": {
+              "browserTarget": "lhyfe-portail:build:staging.local"
             },
             "development": {
               "browserTarget": "lhyfe-planner:build:development"
