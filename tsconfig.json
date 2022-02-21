@@ -8,7 +8,11 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "paths": {     
+    "paths": {
+      "lhyfe-components": [
+        "dist/lhyfe-components/lhyfe-components",
+        "dist/lhyfe-components"
+      ],
       "lhyfe-nav": [
         "dist/lhyfe-nav/lhyfe-nav",
         "dist/lhyfe-nav"

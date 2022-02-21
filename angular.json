@@ -207,6 +207,140 @@
           }
         }
       }
+    },
+    "lhyfe-components": {
+      "projectType": "library",
+      "root": "projects/lhyfe-components",
+      "sourceRoot": "projects/lhyfe-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lhyfe-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lhyfe-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lhyfe-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lhyfe-components/src/test.ts",
+            "tsConfig": "projects/lhyfe-components/tsconfig.spec.json",
+            "karmaConfig": "projects/lhyfe-components/karma.conf.js"
+          }
+        }
+      }
+    },
+    "lhyfe-planner": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/lhyfe-planner",
+      "sourceRoot": "projects/lhyfe-planner/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/lhyfe-planner",
+            "index": "projects/lhyfe-planner/src/index.html",
+            "main": "projects/lhyfe-planner/src/main.ts",
+            "polyfills": "projects/lhyfe-planner/src/polyfills.ts",
+            "tsConfig": "projects/lhyfe-planner/tsconfig.app.json",
+            "inlineStyleLanguage": "sass",
+            "assets": [
+              "projects/lhyfe-planner/src/favicon.ico",
+              "projects/lhyfe-planner/src/assets"
+            ],
+            "styles": [
+              "projects/lhyfe-planner/src/styles.sass"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/lhyfe-planner/src/environments/environment.ts",
+                  "with": "projects/lhyfe-planner/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "lhyfe-planner:build:production"
+            },
+            "development": {
+              "browserTarget": "lhyfe-planner:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "lhyfe-planner:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lhyfe-planner/src/test.ts",
+            "polyfills": "projects/lhyfe-planner/src/polyfills.ts",
+            "tsConfig": "projects/lhyfe-planner/tsconfig.spec.json",
+            "karmaConfig": "projects/lhyfe-planner/karma.conf.js",
+            "inlineStyleLanguage": "sass",
+            "assets": [
+              "projects/lhyfe-planner/src/favicon.ico",
+              "projects/lhyfe-planner/src/assets"
+            ],
+            "styles": [
+              "projects/lhyfe-planner/src/styles.sass"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "lhyfe-portail"
