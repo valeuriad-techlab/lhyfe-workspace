@@ -33,3 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # publish 
 > npm publish --registry http://localhost:4873/ --force
+
+# docker
+## lhyfe-portail
+> docker build --build-arg environnement=staging -t lhyfe-portail:0.0.1-staging -f ./Dockerfile-lhyfe-portail .
